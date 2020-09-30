@@ -129,7 +129,7 @@ class Terminal {
     }
 
 	public static void main(String[] args) throws SocketException {
-		
+		System.out.println(getExternIP());
 		if (args.length > 1 ) {
 			try {
 				server = new ServerSocket(Integer.valueOf(args[0]));
