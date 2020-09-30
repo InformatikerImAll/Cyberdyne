@@ -129,8 +129,13 @@ class Terminal {
     }
 
 	public static void main(String[] args) throws SocketException {
-		System.out.println(getExternIP());
-		if (args.length > 1 ) {
+		try {
+			System.out.println(getExternIP());
+			System.out.println(getInternIP());
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		if (args.length > 1 ) {
 			try {
 				server = new ServerSocket(Integer.valueOf(args[0]));
 			} catch (IOException e) {
